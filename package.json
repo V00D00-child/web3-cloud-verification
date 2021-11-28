@@ -1,0 +1,57 @@
+{
+  "name": "web3-cloud-verification",
+  "version": "1.0.0",
+  "description": "Boilerplate code to compile, migrate, and test a Truffle project on Arbitrum",
+  "main": "truffle-config.arbitrum.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "installLocalArbitrum": "git clone -b master https://github.com/offchainlabs/arbitrum.git",
+    "startLocalEthereum": "cd arbitrum && git submodule update --init --recursive && yarn && yarn build && yarn docker:build:geth && yarn docker:geth",
+    "startLocalArbitrum": "cd arbitrum && yarn demo:initialize && yarn demo:deploy",
+    "compile:ethereum": "truffle compile",
+    "compile:arbitrum": "truffle compile --config truffle-config.arbitrum.js",
+    "test:ethereum": "truffle test",
+    "test:arbitrum": "truffle test --config truffle-config.arbitrum.js --network arbitrum_testnet",
+    "migrate:contract:dev": "truffle migrate --reset",
+    "migrate:contract:kovan": "truffle migrate --reset --network kovan",
+    "migrate:contract:rinkeby": "truffle migrate --reset --network rinkeby",
+    "migrate:contract:ropsten": "truffle migrate --reset --network ropsten",
+    "migrate:contract:polygon_mumbai_test": "truffle migrate --reset --network polygon_mumbai_test",
+    "migrate:contract:polygon_main": "truffle migrate --reset --network polygon_main",
+    "migrate:contract:main": "truffle migrate --network main",
+    "migrate:contract:arbitrum_test": "truffle migrate --config truffle-config.arbitrum.js --network arbitrum_testnet",
+    "migrate:contract:arbitrum_main": "truffle migrate --config truffle-config.arbitrum.js --network arbitrum_mainnet",
+    "findContracts": "truffle networks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truffle-box/arbitrum-box.git"
+  },
+  "keywords": [
+    "Arbitrum",
+    "Ethereum",
+    "Truffle",
+    "Layer",
+    "2",
+    "Polygon"
+  ],
+  "author": "Idris Bowman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/truffle-box/arbitrum-box/issues"
+  },
+  "homepage": "https://github.com/truffle-box/arbitrum-box#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.0",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "truffle": "^5.4.22",
+    "truffle-assertions": "^0.9.2"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.4.1",
+    "dotenv": "^10.0.0"
+  }
+}
