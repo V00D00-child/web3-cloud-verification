@@ -7,6 +7,7 @@
 // Updated     : To support Solidity version ^0.8.3
 // Programmer  : Idris Bowman
 // Link        : https://idrisbowman.com
+// Last test   : locally 11/29/21 (VerificationBase.test.js)
 
 // ----------------------------------------------------------------------------
 
