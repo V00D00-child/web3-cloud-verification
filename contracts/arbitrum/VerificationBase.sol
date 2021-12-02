@@ -7,6 +7,7 @@
 // Updated     : To support Solidity version ^0.8.3
 // Programmer  : Idris Bowman
 // Link        : https://idrisbowman.com
+// Last test   : locally 11/29/21 (https://github.com/V00D00-child/web3-cloud-verification/blob/main/test/VerificationBase.test.js)
 
 // ----------------------------------------------------------------------------
 
@@ -14,11 +15,9 @@ pragma solidity ^0.8.3;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-interface IERC20 {
-    function transfer(address _to, uint256 _amount) external returns (bool);
-}
-
 contract VerificationBase is Ownable {
+    address constant ETHER = address(0);
+    event Withdraw(address token, address user, uint256 amount, uint256 balance);
 
     constructor() Ownable() {
     }
@@ -74,18 +73,19 @@ contract VerificationBase is Ownable {
     }
 
     receive() external payable {}
+     
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
+    }
 
     function destory() public onlyOwner {
         address _owner = this.owner();
-        address payable addr = payable(address(_owner));
-        selfdestruct(addr);
+        selfdestruct(payable(_owner)); 
     }
 
-    function withdrawToken(address _tokenContract, uint256 _amount) external onlyOwner {
-        IERC20 tokenContract = IERC20(_tokenContract);
-        
-        // transfer the token from address of this contract
-        // to address of the user (executing the withdrawToken() function)
-        tokenContract.transfer(msg.sender, _amount);
+    function withdrawEther(uint256 _amount) payable public onlyOwner {
+        require(address(this).balance >= _amount);
+        payable(msg.sender).transfer(_amount);
+        emit Withdraw(ETHER, msg.sender, _amount, address(this).balance);
     }
 }

@@ -76,7 +76,7 @@ module.exports = {
           mnemonic: {
             phrase: mnemonic
           }, 
-          providerOrUrl: `https://rpc-mumbai.maticvigil.com`,
+          providerOrUrl: `https://polygon-mumbai.infura.io/v3/${infuraKey}`,
           numberOfAddresses: 1,
           network_id: 80001,
           chainId: 80001

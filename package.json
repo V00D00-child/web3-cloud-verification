@@ -23,7 +23,8 @@
     "migrate:contract:main": "truffle migrate --network main",
     "migrate:contract:arbitrum_test": "truffle migrate --config truffle-config.arbitrum.js --network arbitrum_testnet",
     "migrate:contract:arbitrum_main": "truffle migrate --config truffle-config.arbitrum.js --network arbitrum_mainnet",
-    "findContracts": "truffle networks"
+    "findContracts": "truffle networks",
+    "contact:flatten": "npx truffle-flattener ./contracts/ethereum/VerificationBase.sol > ./VerificationBase.txt"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,7 @@
   },
   "devDependencies": {
     "@truffle/hdwallet-provider": "^1.4.1",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "truffle-flattener": "^1.5.0"
   }
 }
