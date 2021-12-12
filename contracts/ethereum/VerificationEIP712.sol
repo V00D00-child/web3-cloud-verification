@@ -25,6 +25,7 @@ contract VerificationEIP712 is Ownable  {
         string url;
         string version;
         uint256 nonce;
+        uint256 expiration;
     }
   
     constructor() Ownable() {
@@ -38,15 +39,16 @@ contract VerificationEIP712 is Ownable  {
         address sender,
         string memory email,
         string memory url,
-        string memory version,
-        uint256 nonce
-    ) public pure returns (bool) {
+        uint256 nonce,
+        uint256 expiration
+    ) public view returns (bool) {
+            require(block.timestamp < expiration, "Signature has expired");
 
             // get domain hash
             bytes32 DOMAIN_SEPARATOR_HASH = keccak256(
                 abi.encode(
                     keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"),
-                    keccak256(bytes("My amazing dApp")),
+                    keccak256(bytes("Web3 Cloud")),
                     keccak256(bytes("1")),
                     4,
                     0x1C56346CD2A2Bf3202F771f50d3D14a367B48070
@@ -56,13 +58,13 @@ contract VerificationEIP712 is Ownable  {
             // get struct hash
             bytes32 structHash = keccak256(
                     abi.encode(
-                        keccak256("Identity(string action,address signer,string email,string url,string version,uint256 nonce)"),
+                        keccak256("Identity(string action,address signer,string email,string url,uint256 nonce,uint256 expiration)"),
                         keccak256(bytes(action)),
                         sender,
                         keccak256(bytes(email)),
                         keccak256(bytes(url)),
-                        keccak256(bytes(version)),
-                        nonce
+                        nonce,
+                        expiration
                     )
             );
 
