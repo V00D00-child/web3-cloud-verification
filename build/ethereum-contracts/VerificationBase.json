@@ -15130,10 +15130,16 @@
       "links": {},
       "address": "0xfb80ce53B880e48Fb4543d0c8CEe52313bAff817",
       "transactionHash": "0xf5c745d523759a95f7b29c26bcc1c1e6be430bbd109453e0a09a030787a72a0a"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x49F62f33b7352Cf9D96285Bae47585A4A7D343C6",
+      "transactionHash": "0xd2432da0fbde96c976934bbca9cd6dec1433b1b77c8defb6918c7fa7c4a526c7"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-02T20:21:37.361Z",
+  "updatedAt": "2021-12-13T19:53:36.198Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

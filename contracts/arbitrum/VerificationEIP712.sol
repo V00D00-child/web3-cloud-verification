@@ -16,8 +16,6 @@ contract VerificationEIP712 is Ownable  {
     uint256 private chainId;
     string private name;
     string private version;
-    address constant ETHER = address(0);
-    event Withdraw(address token, address user, uint256 amount, uint256 balance);
 
     // Structs
     struct Identity {
