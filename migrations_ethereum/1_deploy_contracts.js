@@ -4,8 +4,8 @@ var VerificationEIP712 = artifacts.require("./VerificationEIP712.sol");
 
 module.exports = async function(deployer, network) {
   // Deploy VerificationBase
-  // await deployer.deploy(VerificationBase);
-  // console.log(`Deploying VerificationBase contract to ${network}`);
+  await deployer.deploy(VerificationBase);
+  console.log(`Deploying VerificationBase contract to ${network}`);
 
   // Deploy VerificationEIP712
   let chainId;

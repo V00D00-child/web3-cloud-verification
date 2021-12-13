@@ -21,7 +21,7 @@ smart contracts.
 1. Rinkeby Test Network
   - contract address: https://rinkeby.etherscan.io/address/0xD703D6b68C5351651dF730C4F5F5C0b4eE6202eA
 2. Arbitrum Rinkeby
-  - contract address: https://rinkeby-explorer.arbitrum.io/address/0x900334a80ABF7FB86A266F0Ca32100639Ec68eF2
+  - contract address: https://rinkeby-explorer.arbitrum.io/address/0x5804C85a1fB75d9045C3e64F15956257A91D1528
 3. Mainnet Ethereum (comming soon)
 4. Arbitrum Mainnet (comming soon)
 
