@@ -79,4 +79,21 @@ contract VerificationEIP712 is Ownable  {
             require(signer != address(0), "ECDSA: Invalid signature");
             return signer == sender;
     }
+
+        receive() external payable {}
+     
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
+    }
+
+    function destory() public onlyOwner {
+        address _owner = this.owner();
+        selfdestruct(payable(_owner)); 
+    }
+
+    function withdrawEther(uint256 _amount) payable public onlyOwner {
+        require(address(this).balance >= _amount);
+        payable(msg.sender).transfer(_amount);
+        emit Withdraw(ETHER, msg.sender, _amount, address(this).balance);
+    }
 }
