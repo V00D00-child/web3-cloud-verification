@@ -20,7 +20,7 @@ module.exports = async function(deployer, network) {
   } else if (deployer.network === 'main') {
     chainId = 1;
   } else {
-    chainId = 5777;
+    chainId = 1337;
   }
 
   await deployer.deploy(
