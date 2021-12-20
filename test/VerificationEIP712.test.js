@@ -124,7 +124,7 @@ contract('VerificationEIP712', ([deployer, user1]) => {
         action: '',
         email: '',
         url:'',
-        nonce: 0,
+        nonce: '',
         expiration: 2
       }
 

@@ -1,12 +1,7 @@
 /* eslint-disable no-undef */
-var VerificationBase = artifacts.require("./VerificationBase.sol");
 var VerificationEIP712 = artifacts.require("./VerificationEIP712.sol");
 
 module.exports = async function(deployer, network) {
-  // Deploy VerificationBase
-  await deployer.deploy(VerificationBase);
-  console.log(`Deploying VerificationBase contract to ${network}`);
-
   // Deploy VerificationEIP712
   let chainId;
   const name = 'Web3 Cloud';

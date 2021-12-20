@@ -26,7 +26,7 @@ contract VerificationEIP712 is Ownable  {
         string email;
         string url;
         string version;
-        uint256 nonce;
+        string nonce;
         uint256 expiration;
     }
   
@@ -44,7 +44,7 @@ contract VerificationEIP712 is Ownable  {
         address sender,
         string memory email,
         string memory url,
-        uint256 nonce,
+        string memory nonce,
         uint256 expiration
     ) public view returns (bool) {
             require(block.timestamp < expiration, "Signature has expired");
@@ -63,12 +63,12 @@ contract VerificationEIP712 is Ownable  {
             // get struct hash
             bytes32 structHash = keccak256(
                     abi.encode(
-                        keccak256("Identity(string action,address signer,string email,string url,uint256 nonce,uint256 expiration)"),
+                        keccak256("Identity(string action,address signer,string email,string url,string nonce,uint256 expiration)"),
                         keccak256(bytes(action)),
                         sender,
                         keccak256(bytes(email)),
                         keccak256(bytes(url)),
-                        nonce,
+                        keccak256(bytes(nonce)),
                         expiration
                     )
             );

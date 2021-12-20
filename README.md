@@ -19,9 +19,9 @@ smart contracts.
 ### Verication-EIP712
 - Current Blockchain Network support
 1. Rinkeby Test Network
-  - contract address: https://rinkeby.etherscan.io/address/0xD703D6b68C5351651dF730C4F5F5C0b4eE6202eA
+  - contract address: https://rinkeby.etherscan.io/address/0xdC56725aE658b7AE6110507Cec09E506bEEA8410
 2. Arbitrum Rinkeby
-  - contract address: https://rinkeby-explorer.arbitrum.io/address/0x5804C85a1fB75d9045C3e64F15956257A91D1528
+  - contract address: https://rinkeby-explorer.arbitrum.io/address/0x0ECeF04E2686372e49C27343e1306d6674F782E5
 3. Mainnet Ethereum (comming soon)
 4. Arbitrum Mainnet (comming soon)
 
