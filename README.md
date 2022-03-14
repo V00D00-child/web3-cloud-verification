@@ -1,6 +1,5 @@
 # Signature Verication
-Authenticate Ethereum accounts on-chain using Signature Verication 
-smart contracts.
+Authenticate Ethereum accounts on-chain using Signature Verification smart contracts.
 
 ## Signature Verication Types
 - Base - user signed unique hash message.
